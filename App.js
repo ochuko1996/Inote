@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import TodoApp from "./src/TodoApp/TodoApp";
+import Todo from "./src/Todo/Todos";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Note from "./src/NoteApp/Notes";
+import NoteDetails from "./src/screens/NoteDetails";
 
+const Stack = createNativeStackNavigator()
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Todos" component={Todo}/>
+        <Stack.Screen name="Note" component={Note}/>
+        <Stack.Screen name="Note-Details" component={NoteDetails}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//   },
+// })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
