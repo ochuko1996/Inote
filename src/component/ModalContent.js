@@ -1,38 +1,20 @@
 import { View, Text, TextInput, Pressable, TouchableWithoutFeedback,   } from "react-native"
-
-export default function ModalContent({isOpen, styles, addNotes, values, onChangeHandler, modalClose, removeNote}) {
+import { styles } from "../Styles/StyledNote"
+import Icon  from "react-native-vector-icons/FontAwesome"
+import NoteForm from "./NoteForm"
+export default function ModalContent({addNotes, values, onChangeHandler, modalClose, removeNote}) {
   return (
-    <TouchableWithoutFeedback>
+    <Pressable style={{flex: 1}}>
       <View style={styles.formOverlay}>
         <Pressable onPress={modalClose} style={styles.removeBtn}>
-          <Text style={styles.removeBtnText}>
-            close
-          </Text>
+            <Icon name='times' size={20} color={"#fff"}/>
         </Pressable>
-        <View style={styles.formWrapper}>
-            <TextInput
-                placeholder='enter note title'
-                value={values.title}
-                onChangeText={title => onChangeHandler('title', title)}
-                style={styles.formInput}
-                placeholderTextColor={"#fff"}
-            />
-            <TextInput
-                placeholder='enter note content'
-                value={values.content}
-                onChangeText={content => onChangeHandler('content', content)}
-                style={[styles.formInput]}
-                multiline={true}
-                rows={10}
-                placeholderTextColor={"#fff"}
-                />
-            <Pressable style={styles.formBtn} onPress={addNotes}>
-            <Text style={styles.formBtnText}>
-                Add Note
-            </Text>
-            </Pressable>
-        </View>
+        <NoteForm
+          values={values}
+          onChangeHandler={onChangeHandler}
+          addNotes={addNotes}
+        />
       </View>
-    </TouchableWithoutFeedback>
+    </Pressable>
   )
 }

@@ -1,6 +1,6 @@
 import { styles } from "../Styles/StyledTodo";
 import { useState } from 'react';
-import { Pressable, Text, StyleSheet, View } from 'react-native';
+import { Pressable, Text, StyleSheet, View, SafeAreaView } from 'react-native';
 import Input from "../component/TaskInput";
 import Tasks from "../component/Tasks";
 
@@ -18,18 +18,24 @@ export default function Todo({navigation}) {
     }
     const removeTask = (id)=> setTasks(tasks.filter(item => item.id !== id))
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
-        <Pressable
-          style={style.navBtn}
-          onPress={()=> navigation.navigate('Note')}>
-            <Text style={style.navText}>
-              notes
-            </Text>
-        </Pressable>
-        <Text style={styles.Header}>
-          todo
-        </Text>
+        {/* <View style={styles.navLinks}>
+          <Pressable
+            style={style.navBtn}
+            onPress={()=> navigation.navigate('Note')}>
+              <Text style={style.navText}>
+                notes
+              </Text>
+          </Pressable>
+          <Pressable
+            style={style.navBtn}
+            onPress={()=> navigation.navigate('Voice Recording')}>
+              <Text style={style.navText}>
+                Voice Recording
+              </Text>
+          </Pressable>
+        </View> */}
         <Input 
             styles={styles} 
             text={text} 
@@ -42,7 +48,7 @@ export default function Todo({navigation}) {
             removeTask={removeTask}
         />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 const style = StyleSheet.create({
@@ -51,6 +57,7 @@ const style = StyleSheet.create({
     width: 120,
     padding: 10,
     borderRadius: 5,
+    marginRight: 10,
   },
   navText: {
     color: "#fff",

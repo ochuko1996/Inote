@@ -4,7 +4,6 @@ export default function Input({styles, text, handleChange, addTask}) {
     <View style={styles.inputWrapper}>
           <TextInput 
             style={styles.input} 
-            
             placeholder='Add 
             Todo' 
             onChangeText={handleChange} 

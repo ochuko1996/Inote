@@ -1,5 +1,5 @@
 import { Text, ScrollView } from "react-native"
-import SingleTask from "./SingleTask"
+import SingleTask from "../component/SingleTask"
 
 export default function Tasks({styles, tasks, removeTask}) {
   return (

@@ -4,12 +4,16 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
+    },
+    wrapper:{
         padding: 10,
     },
     formOverlay:{
         backgroundColor: "rgba(0,0,0,0.9)",
         padding: 10,
         flex: 1,
+        height: "100%"
+
 
     },
     formWrapper: {
@@ -28,7 +32,7 @@ export const styles = StyleSheet.create({
         // textAlign:
     },
     formBtn:{
-        backgroundColor: "#22ccff",
+        backgroundColor: "#007aff",
         borderRadius: 10,        
         padding: 10,
         height: 40,   
@@ -40,16 +44,19 @@ export const styles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     noteContainer: {
-        flexDirection: "row",
         borderRadius: 10,
         borderWidth: 1,
         padding: 10,
-        height: 80,
         marginBottom: 10,
-        alignItems: "center",
         marginTop: 10,
+        height: 80,
     },
     noteWrapper:{
+        flexDirection: "row",
+        alignItems: "center",
+        // flex: 3,
+    },
+    noteTextWrapper:{
         flex: 3,
     },
     noteHeader: {
@@ -69,11 +76,14 @@ export const styles = StyleSheet.create({
         textTransform: "capitalize"
     },
     removeBtn: {
-        // flex: 1,
-        width: 50,
-        backgroundColor: 'red',
+        width: 40,
         padding: 5,
-        alignSelf: "flex-end"
+        alignSelf: "flex-end",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    bgRed:{
+        backgroundColor: 'red'
     },
     alignCenter: {
         alignItems: "center"
@@ -81,10 +91,12 @@ export const styles = StyleSheet.create({
     selfCenter: {
         alignSelf: "center"
     },
-    removeBtnText: {
-        color: '#fff', 
-        textAlign: 'center',
-        textTransform: "capitalize"
-    }
+    justifyCenter: {
+        justifyContent: 'center'
+    },
+    // removeBtnText: {
+    //     textAlign: 'center',
+    //     textTransform: "capitalize"
+    // }
 
 })

@@ -25,12 +25,13 @@ export const styles = StyleSheet.create({
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 0,
         borderWidth: 1,
+        borderRightWidth: 0,
         padding: 5,
         flex: 3
     },
     btn: {
         // borderWidth: 1,
-        backgroundColor: "#22ccff",
+        backgroundColor: "#007aff",
         justifyContent: "center",
         borderTopLeftRadius: 0,
         borderTopRightRadius: 5,
@@ -47,6 +48,7 @@ export const styles = StyleSheet.create({
     inputWrapper: {
         flexDirection: 'row',
         height: 50,
+        marginVertical: 20,
     },
     tasksWrapper: {
         alignItems: 'center',
@@ -57,12 +59,23 @@ export const styles = StyleSheet.create({
         flex: 3
     },
     removeBtn: {
-        flex: 1,
+        width: 30,
+        height: 30,
         backgroundColor: 'red',
         padding: 5,
+        alignItems: "center",
+        borderRadius: 5,
+        marginLeft: 20,
     },
-    removeBtnText: {
-        color: '#fff', 
-        textAlign: 'center'
+    // removeBtnText: {
+    //     color: '#fff', 
+    //     textAlign: 'center'
+    // },
+    pass: {
+        textDecorationLine: 'line-through',
+        color: 'green'
+    },
+    navLinks: {
+        flexDirection: "row"
     }
   });
