@@ -1,3 +1,4 @@
+http://localhost:3010/auto_auth?firstname=samuel&lastname=george&email=georgesamuel7@gmail.com&kid=username&uid=username&guard=admin
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
